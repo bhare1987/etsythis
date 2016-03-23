@@ -1,0 +1,24 @@
+{
+  "name": "etsythis",
+  "homepage": "https://github.com/bhare1987/etsythis",
+  "authors": [
+    "bhare1987 <brandonlhare@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "angular": "^1.5.2",
+    "angular-route": "^1.5.2",
+    "font-awesome": "fontawesome#^4.5.0"
+  }
+}
