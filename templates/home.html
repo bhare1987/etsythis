@@ -1,16 +1,26 @@
 <div class="row">
   <div class="col-md-12">
-    <div class="col-md-12">
-      <input type="text" name="search" ng-model="search.price" placeholder="Search by Price">
-      <input type="text" name="search" ng-model="search.title" placeholder="Search by Title">
+    <h1>Etsy THIS</h1>
+  </div>
+  <div class="col-md-12">
+    <div class="form-group">
+      <label for="searchPrice">Search by Price</label>
+      <input class="form-control" type="text" name="searchPrice" ng-model="search.price" placeholder="Search by Price">
     </div>
+    <div class="form-group">
+      <label for="searchTitle">Search by Title</label>
+      <input class="form-control" type="text" name="searchTitle" ng-model="search.title" placeholder="Search by Title">
+    </div>
+  </div>
+  <div class="col-md-12">
     <div ng-repeat="item in items | filter:search:strict">
-      <button name="add" ng-click="addItem(item)">Add to Cart</button>
-      <input type="number" name="qty" ng-model="item.qty">
       <a href="/#/product/{{item.id}}"><h2>{{item.title}}</h2></a>
-      <p>{{item.price | currency}}</p>
+      <p>{{item.price | currency}} <a href="{{item.url}}" target="_blank">View Listing</a></p>
       <img ng-src="{{item.img}}"/>
-      <a href="{{item.url}}" target="_blank">View Listing</a>
+      <div class="form-group">
+        <input class="form-control" type="number" name="qty" ng-model="item.qty" placeholder="Quantity">
+        <button class="btn btn-default" name="add" ng-click="addItem(item)">Add to Cart</button>
+      </div>
     </div>
   </div>
 </div>

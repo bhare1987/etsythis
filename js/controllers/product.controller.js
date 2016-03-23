@@ -12,7 +12,8 @@ angular
           url: el.url,
           img: el.MainImage.url_fullxfull,
           description: el.description,
-          materials: el.materials
+          materials: el.materials,
+          thumb: el.MainImage.url_75x75
         }
       });
       console.log(map[0]);
@@ -25,6 +26,7 @@ angular
         qty: item.qty,
         price: item.price * item.qty,
         title: item.title,
+        img: item.thumb
       }
       CartService.addToCart(addObj).then(function(){
         $location.path('/cart');

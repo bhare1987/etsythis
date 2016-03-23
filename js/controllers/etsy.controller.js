@@ -17,6 +17,7 @@ angular
           title: htmlDecode(el.title),
           url: el.url,
           img: el.MainImage.url_170x135,
+          thumb: el.MainImage.url_75x75
         };
       });
       $scope.items = map;
@@ -28,6 +29,7 @@ angular
         qty: item.qty,
         price: item.price * item.qty,
         title: item.title,
+        img: item.thumb
       }
       CartService.addToCart(addObj).then(function(){
         $location.path('/cart');
