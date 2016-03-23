@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-md-12">
+    <div ng-repeat="item in cart">
+      <button name="remove" ng-click="removeItem(item)">Remove from Cart</button>
+      <h2>{{item.title}}</h2>
+      <p>{{item.price | currency}}</p>
+      <p>{{item.qty}}</p>
+      <img ng-src="{{item.img}}"/>
+    </div>
+    <div class="col-md-12">
+      <p>Total: {{total | currency}}</p>
+      <p>Items in Cart: {{totalItems}}</p>
+    </div>
+  </div>
+</div>

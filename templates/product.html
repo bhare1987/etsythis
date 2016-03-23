@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-md-12">
+    <div>
+      <button name="add" ng-click="addItem(item)">Add to Cart</button>
+      <input name="qty" ng-model="item.qty" value="1">
+      <h2>{{item.title}}</h2>
+      <p>{{item.price | currency}}</p>
+      <img ng-src="{{item.img}}"/>
+      <p>{{item.description}}</p>
+      <ul ng-repeat="material in item.materials">
+        <li>{{material}}</li>
+      </ul>
+      <a href="{{item.url}}" target="_blank">View Listing</a>
+
+    </div>
+  </div>
+</div>

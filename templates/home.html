@@ -1,10 +1,16 @@
 <div class="row">
   <div class="col-md-12">
-    <div ng-repeat="item in items">
-      <button name="add">Add to Cart</button>
-      <h2>{{item.title}}</h2>
+    <div class="col-md-12">
+      <input type="text" name="search" ng-model="search.price" placeholder="Search by Price">
+      <input type="text" name="search" ng-model="search.title" placeholder="Search by Title">
+    </div>
+    <div ng-repeat="item in items | filter:search:strict">
+      <button name="add" ng-click="addItem(item)">Add to Cart</button>
+      <input name="qty" ng-model="item.qty" value="1">
+      <a href="/#/product/{{item.id}}"><h2>{{item.title}}</h2></a>
+      <p>{{item.price | currency}}</p>
       <img ng-src="{{item.img}}"/>
-      <a href="{{item.url}}"></a>
+      <a href="{{item.url}}" target="_blank">View Listing</a>
     </div>
   </div>
 </div>
