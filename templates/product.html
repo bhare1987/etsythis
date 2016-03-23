@@ -2,7 +2,7 @@
   <div class="col-md-12">
     <div>
       <button name="add" ng-click="addItem(item)">Add to Cart</button>
-      <input name="qty" ng-model="item.qty" value="1">
+      <input type="number" name="qty" ng-model="item.qty">
       <h2>{{item.title}}</h2>
       <p>{{item.price | currency}}</p>
       <img ng-src="{{item.img}}"/>

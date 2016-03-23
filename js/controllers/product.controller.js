@@ -6,6 +6,7 @@ angular
       var map = item.data.results.map(function(el){
         return {
           id: el.listing_id,
+          qty: 1,
           price: el.price,
           title: el.title,
           url: el.url,
@@ -22,7 +23,7 @@ angular
       addObj = {
         prod_id: item.id,
         qty: item.qty,
-        price: item.price,
+        price: item.price * item.qty,
         title: item.title,
       }
       CartService.addToCart(addObj).then(function(){

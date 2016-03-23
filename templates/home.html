@@ -6,7 +6,7 @@
     </div>
     <div ng-repeat="item in items | filter:search:strict">
       <button name="add" ng-click="addItem(item)">Add to Cart</button>
-      <input name="qty" ng-model="item.qty" value="1">
+      <input type="number" name="qty" ng-model="item.qty">
       <a href="/#/product/{{item.id}}"><h2>{{item.title}}</h2></a>
       <p>{{item.price | currency}}</p>
       <img ng-src="{{item.img}}"/>
