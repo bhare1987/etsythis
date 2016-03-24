@@ -26,13 +26,13 @@ angular
     })
 
     $scope.removeItem = function(item){
-      CartService.removeFromCart(item._id);
       var itemIdx = $scope.cart.findIndex(function(el){
-        return el._id = item._id;
+        return el._id === item._id;
       });
       $scope.cart.splice(itemIdx, 1);
       $scope.total = $scope.total - parseFloat(item.price);
       $scope.totalItems = $scope.totalItems - item.qty;
+      CartService.removeFromCart(item._id);
     }
 
 
