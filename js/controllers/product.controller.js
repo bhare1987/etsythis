@@ -1,6 +1,12 @@
 angular
   .module('EtsyThis')
   .controller('productController', function($scope, EtsyService, CartService, $location, $routeParams){
+    function htmlDecode(input){
+      //https://css-tricks.com/snippets/javascript/unescape-html-in-js/
+      var e = document.createElement('div');
+      e.innerHTML = input;
+      return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
+    }
 
     EtsyService.getListing($routeParams.id).then(function(item){
       var map = item.data.results.map(function(el){
@@ -11,7 +17,7 @@ angular
           title: el.title,
           url: el.url,
           img: el.MainImage.url_fullxfull,
-          description: el.description,
+          description: htmlDecode(el.description),
           materials: el.materials,
           thumb: el.MainImage.url_75x75
         }

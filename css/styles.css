@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box; }
+
+h1 {
+  font-size: 4em; }
+
+img {
+  display: block; }
+
+.productRow {
+  position: relative;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 10px; }
+  .productRow p {
+    font-weight: bold; }
+    .productRow p a {
+      margin-left: 50px; }
+  .productRow img {
+    margin-top: 10px;
+    margin-bottom: 10px; }
+  .productRow button {
+    margin-top: 10px; }
+  .productRow button[name="remove"] {
+    position: absolute;
+    right: 10px;
+    bottom: 20px; }

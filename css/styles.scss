@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 4em;
+}
+
+img {
+  display: block;
+}
+
+.productRow {
+  position: relative;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+  p {
+    font-weight: bold;
+    a {
+      margin-left: 50px;
+    }
+  }
+  img {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  button {
+    margin-top: 10px;
+  }
+  button[name="remove"] {
+    position: absolute;
+    right: 10px;
+    bottom: 20px;
+  }
+}

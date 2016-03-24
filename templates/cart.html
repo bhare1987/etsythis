@@ -1,11 +1,14 @@
 <div class="row">
   <div class="col-md-12">
-    <div ng-repeat="item in cart">
+    <div ng-show="cart.length === 0">
+      <h1>Your cart is empty. Please buy things.</h1>
+    </div>
+    <div class="productRow bg-primary" ng-repeat="item in cart">
       <h2>{{item.title}}</h2>
-      <p>{{item.price | currency}}</p>
-      <p>{{item.qty}}</p>
-      <button name="remove" ng-click="removeItem(item)">Remove from Cart</button>
-      <img ng-src="{{item.img}}"/>
+      <p>Price: {{item.price | currency}}</p>
+      <p>Qty: {{item.qty}}</p>
+      <img class="img-responsive img-thumbnail" ng-src="{{item.img}}"/>
+      <button class="btn btn-danger" name="remove" ng-click="removeItem(item)">Remove from Cart</button>
     </div>
     <div class="col-md-12">
       <p>Total: {{total | currency}}</p>
