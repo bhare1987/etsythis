@@ -31,7 +31,7 @@ angular
       });
       $scope.cart.splice(itemIdx, 1);
       $scope.total = $scope.total - parseFloat(item.price);
-      $scope.totalItems = $scope.totalItems - item.qty;
+      $scope.totalItems = $scope.totalItems - parseInt(item.qty);
       CartService.removeFromCart(item._id);
     }
 
